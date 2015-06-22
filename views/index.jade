@@ -38,11 +38,11 @@ html(lang='en')
             li.hidden
               a(href='#page-top')
             li.page-scroll
-              a(href='#portfolio') FAQ
-            li.page-scroll
               a(href='#about') About
             li.page-scroll
               a(href='#contact') Contact
+            li.page-scroll
+              a(href='#portfolio') FAQ
         // /.navbar-collapse
       // /.container-fluid
     // Header
@@ -52,54 +52,11 @@ html(lang='en')
           .col-lg-12
             .intro-text
               span.name Andrews ADR Services
-              hr
+              hr#head-hr
               span.skills Just stop bickering, you whiner
-    // Portfolio Grid Section
-    section#portfolio
-      .container
-        .row
-          .col-lg-12.text-center
-            h2 Frequently Asked Questions
-            hr
-        .row
-          .col-sm-4.portfolio-item
-            a.portfolio-link(href='#portfolioModal1', data-toggle='modal')
-              .caption
-                .caption-content
-                  i.fa.fa-search-plus.fa-3x
-              img.img-responsive(src='images/question.jpg', alt='')
-          .col-sm-4.portfolio-item
-            a.portfolio-link(href='#portfolioModal2', data-toggle='modal')
-              .caption
-                .caption-content
-                  i.fa.fa-search-plus.fa-3x
-              img.img-responsive(src='images/question.jpg', alt='')
-          .col-sm-4.portfolio-item
-            a.portfolio-link(href='#portfolioModal3', data-toggle='modal')
-              .caption
-                .caption-content
-                  i.fa.fa-search-plus.fa-3x
-              img.img-responsive(src='images/question.jpg', alt='')
-          .col-sm-4.portfolio-item
-            a.portfolio-link(href='#portfolioModal4', data-toggle='modal')
-              .caption
-                .caption-content
-                  i.fa.fa-search-plus.fa-3x
-              img.img-responsive(src='images/question.jpg', alt='')
-          .col-sm-4.portfolio-item
-            a.portfolio-link(href='#portfolioModal5', data-toggle='modal')
-              .caption
-                .caption-content
-                  i.fa.fa-search-plus.fa-3x
-              img.img-responsive(src='images/question.jpg', alt='')
-          .col-sm-4.portfolio-item
-            a.portfolio-link(href='#portfolioModal6', data-toggle='modal')
-              .caption
-                .caption-content
-                  i.fa.fa-search-plus.fa-3x
-              img.img-responsive(src='images/question.jpg', alt='')
+   
     // About Section
-    section#about.success
+    section#about
       .container
         .row
           .col-lg-12.text-center
@@ -117,12 +74,12 @@ html(lang='en')
           //-     i.fa.fa-download
           //-     |  Download Theme
     // Contact Section
-    section#contact
+    section#contact.success
       .container
         .row
           .col-lg-12.text-center
-            h2 Contact Me
-            hr.star-primary
+            h2 Contact
+            hr#head-hr
         .row
           .col-lg-8.col-lg-offset-2
             // To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
@@ -131,57 +88,138 @@ html(lang='en')
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Name
-                  input#name.form-control(type='text', placeholder='Name', required='', data-validation-required-message='Please enter your name.')
+                  input#name.form-control(name='name', type='text', placeholder='Name', required='', data-validation-required-message='Please enter your name.')
                   p.help-block.text-danger
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Email Address
-                  input#email.form-control(type='email', placeholder='Email Address', required='', data-validation-required-message='Please enter your email address.')
+                  input#email.form-control(type='email', name='email', placeholder='Email Address', required='', data-validation-required-message='Please enter your email address.')
                   p.help-block.text-danger
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Phone Number
-                  input#phone.form-control(type='tel', placeholder='Phone Number', required='', data-validation-required-message='Please enter your phone number.')
+                  input#phone.form-control(type='tel', name='phone', placeholder='Phone Number', required='', data-validation-required-message='Please enter your phone number.')
                   p.help-block.text-danger
+              .row.control-group#antispam
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label Do not use
+                  input(type='text', name='antispam', placeholder='No input here, please!', required='')
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Message
-                  textarea#message.form-control(rows='5', placeholder='Message', required='', data-validation-required-message='Please enter a message.')
+                  textarea#message.form-control(rows='5', name='message', placeholder='Message', required='', data-validation-required-message='Please enter a message.')
                   p.help-block.text-danger
               br
               #success
               .row
                 .form-group.col-xs-12
                   button.btn.btn-success.btn-lg(type='submit') Send
+     // Portfolio Grid Section
+    section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Frequently Asked Questions
+            hr
+        .row
+          h3 How far in advance should I schedule a mediation?
+          p
+            |I tend to schedule matters two to three months out, but occasionally there is 
+            |availability with int month that you contact me.  I find it most efficient to find a 
+            |mutually agreeable date by scheduling through email.  All the parties can participate 
+            |at the same time trying to finalize a date and location.  I do not schedule mediations 
+            |from June 1 through August 31st.
+          br
+          h3 How long will the mediation take?
+          p
+            |Every mediation is unique but to the extent that there is an “average” mediation, it
+            |generally takes about 6 or 7 hours.  I strongly discourage scheduling a mediation for 
+            |more than one day.  In fact, I have only done three two-day mediations in the last 
+            |thirteen years.  I have found that the parties retreat overnight and we almost have 
+            |to begin again the next day.  For more complex cases, I recommend scheduling a 
+            |much longer day to accomplish a complete and final settlement.  We do not break 
+            |for meals so parties should arrange to pick up lunch or have it delivered so we can 
+            |make the best use of our time.
+          br
+          h3 How do I conduct a mediation?
+          p
+            |First and foremost, I prepare.  I read everything that the parties submit, often more
+            |than once.  When we meet the morning of the mediation, I have everyone who is 
+            |present introduce themselves to each other.  I do not begin with “opening 
+            |statements” from the various parties.  I generally begin the first session with the 
+            |claimant and then move to the opposing party or parties.  The first session with each 
+            |is usually the longest, taking half an hour to an hour with each side so I can give the 
+            |parties a fair opportunity to share their concerns and positions with me and so that I 
+            |can clear up any factual confusions I may have after reading the briefs.
+          br
+          p
+            |After that, the separate sessions with each side tend to be shorter and I go back and 
+            |forth between the parties until an agreement is reached.  Once an agreement is 
+            |reached, we meet together and I record the settlement.
+          br
+          h3 What do the parties need to do to prepare for the mediation?
+          p
+            |Generally, I prefer to receive briefs or pleadings or summaries a week before the 
+            |mediation.  That allows me to read the materials when they arrive, turn the matter 
+            |over in my mind during the week, follow up with the parties if I think I am missing 
+            |some critical information,  and finally, reread the materials again before the 
+            |mediation.
+          br
+          p
+            |Mediation should be cost effective and efficient.  If a matter has already been 
+            |thoroughly briefed in a motion, feel free to submit the motion with whatever further 
+            |comments you might think I would find helpful. The point is to educate me about 
+            |your position and there is no need to rework a motion in to a brief format.
+          br
+          p
+            |The most helpful briefs or summaries are those in which the party candidly analyzes 
+            |the strengths and weaknesses of their position so that I can determine whether the 
+            |party has a realistic or unrealistic view of their position.  This, of course, would only 
+            |be done if the parties are submitting confidential briefs. 
+            |The parties themselves determine if briefs are to be exchanged or remain 
+            |confidential
+          br
+          h3 Where do you hold the mediation?
+          p
+            |Mediations are usually conducted in one of the attorneys’ conference rooms.  
+            |Sometimes the parties rent a neutral location, but that adds to the cost of an already 
+            |expensive endeavor.  Each adverse party need its own space.  I do not need a space 
+            |as I am always  with one of the parties during the day.
+          br
+          h3 Do you travel to do mediations?
+          p
+            |Yes, I have held mediations all over Alaska  and in the Pacific Northwest
+          br
+          h3 How would you describe your style of mediation?
+          p
+            |I honed my mediation skills during my judicial career as a very active settlement
+            |judge.  As a result, I tend to be highly evaluative, trying to give the parties an honest 
+            |assessment of their position should the matter proceed to litigation.  
+          br
+          p
+            |On the other hand, my joy in doing this work is to assist parties in reaching a 
+            |settlement in which they are active participants in the solution.  I am not interested 
+            |in dictating solutions.
+          br
+          p
+            |I am an active listener.  I want the parties to know  that I have heard their concerns, 
+            |that I have given their matter the time and attention it deserves and that I will be 
+            |honest with them about the strengths and weaknesses of their position.
+          br
+          p
+            |In the end, I am willing to tell the parties either that they should walk away from an 
+            |unreasonable settlement proposal, that they would be foolish to walk away from a 
+            |very reasonable settlement proposal, or that it is a close question and that I have no 
+            |strong recommendation.  In the end it is their decision.
     // Footer
     footer.text-center
       .footer-above
         .container
           .row
-            .footer-col.col-md-4
+            .footer-col.col-md-6
               h3 Location
               p
-                | 3481 Melrose Place
-                br
-                | Beverly Hills, CA 90210
-            .footer-col.col-md-4
-              h3 Around the Web
-              ul.list-inline
-                li
-                  a.btn-social.btn-outline(href='#')
-                    i.fa.fa-fw.fa-facebook
-                li
-                  a.btn-social.btn-outline(href='#')
-                    i.fa.fa-fw.fa-google-plus
-                li
-                  a.btn-social.btn-outline(href='#')
-                    i.fa.fa-fw.fa-twitter
-                li
-                  a.btn-social.btn-outline(href='#')
-                    i.fa.fa-fw.fa-linkedin
-                li
-                  a.btn-social.btn-outline(href='#')
-                    i.fa.fa-fw.fa-dribbble
+                | Anchorage, AK
             .footer-col.col-md-4
               h3 About Freelancer
               p
@@ -192,204 +230,12 @@ html(lang='en')
         .container
           .row
             .col-lg-12
-              | Copyright © Your Website 2014
+              | Copyright © andrewsadrservices.com 2014
     // Scroll to Top Button (Only visible on small and extra-small screen sizes)
     .scroll-top.page-scroll.visible-xs.visible-sm
       a.btn.btn-primary(href='#page-top')
         i.fa.fa-chevron-up
-    // Portfolio Modals
-    #portfolioModal1.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-      .modal-content
-        .close-modal(data-dismiss='modal')
-          .lr
-            .rl
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .modal-body
-                h2 Project Title
-                hr.star-primary
-                img.img-responsive.img-centered(src='images/question.jpg', alt='')
-                p
-                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
-                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
-                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
-                ul.list-inline.item-details
-                  li
-                    | Client:
-                    strong
-                      a(href='http://startbootstrap.com') Start Bootstrap
-                  li
-                    | Date:
-                    strong
-                      a(href='http://startbootstrap.com') April 2014
-                  li
-                    | Service:
-                    strong
-                      a(href='http://startbootstrap.com') Web Development
-                button.btn.btn-default(type='button', data-dismiss='modal')
-                  i.fa.fa-times
-                  |  Close
-    #portfolioModal2.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-      .modal-content
-        .close-modal(data-dismiss='modal')
-          .lr
-            .rl
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .modal-body
-                h2 Project Title
-                hr.star-primary
-                img.img-responsive.img-centered(src='images/question.jpg', alt='')
-                p
-                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
-                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
-                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
-                ul.list-inline.item-details
-                  li
-                    | Client:
-                    strong
-                      a(href='http://startbootstrap.com') Start Bootstrap
-                  li
-                    | Date:
-                    strong
-                      a(href='http://startbootstrap.com') April 2014
-                  li
-                    | Service:
-                    strong
-                      a(href='http://startbootstrap.com') Web Development
-                button.btn.btn-default(type='button', data-dismiss='modal')
-                  i.fa.fa-times
-                  |  Close
-    #portfolioModal3.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-      .modal-content
-        .close-modal(data-dismiss='modal')
-          .lr
-            .rl
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .modal-body
-                h2 Project Title
-                hr.star-primary
-                img.img-responsive.img-centered(src='img/portfolio/circus.png', alt='')
-                p
-                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
-                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
-                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
-                ul.list-inline.item-details
-                  li
-                    | Client:
-                    strong
-                      a(href='http://startbootstrap.com') Start Bootstrap
-                  li
-                    | Date:
-                    strong
-                      a(href='http://startbootstrap.com') April 2014
-                  li
-                    | Service:
-                    strong
-                      a(href='http://startbootstrap.com') Web Development
-                button.btn.btn-default(type='button', data-dismiss='modal')
-                  i.fa.fa-times
-                  |  Close
-    #portfolioModal4.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-      .modal-content
-        .close-modal(data-dismiss='modal')
-          .lr
-            .rl
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .modal-body
-                h2 Project Title
-                hr.star-primary
-                img.img-responsive.img-centered(src='img/portfolio/game.png', alt='')
-                p
-                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
-                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
-                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
-                ul.list-inline.item-details
-                  li
-                    | Client:
-                    strong
-                      a(href='http://startbootstrap.com') Start Bootstrap
-                  li
-                    | Date:
-                    strong
-                      a(href='http://startbootstrap.com') April 2014
-                  li
-                    | Service:
-                    strong
-                      a(href='http://startbootstrap.com') Web Development
-                button.btn.btn-default(type='button', data-dismiss='modal')
-                  i.fa.fa-times
-                  |  Close
-    #portfolioModal5.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-      .modal-content
-        .close-modal(data-dismiss='modal')
-          .lr
-            .rl
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .modal-body
-                h2 Project Title
-                hr.star-primary
-                img.img-responsive.img-centered(src='img/portfolio/safe.png', alt='')
-                p
-                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
-                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
-                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
-                ul.list-inline.item-details
-                  li
-                    | Client:
-                    strong
-                      a(href='http://startbootstrap.com') Start Bootstrap
-                  li
-                    | Date:
-                    strong
-                      a(href='http://startbootstrap.com') April 2014
-                  li
-                    | Service:
-                    strong
-                      a(href='http://startbootstrap.com') Web Development
-                button.btn.btn-default(type='button', data-dismiss='modal')
-                  i.fa.fa-times
-                  |  Close
-    #portfolioModal6.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
-      .modal-content
-        .close-modal(data-dismiss='modal')
-          .lr
-            .rl
-        .container
-          .row
-            .col-lg-8.col-lg-offset-2
-              .modal-body
-                h2 Project Title
-                hr.star-primary
-                img.img-responsive.img-centered(src='images/img/portfolio/submarine.png', alt='')
-                p
-                  | Use this area of the page to describe your project. The icon above is part of a free icon set by 
-                  a(href='https://sellfy.com/p/8Q9P/jV3VZ/') Flat Icons
-                  | . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
-                ul.list-inline.item-details
-                  li
-                    | Client:
-                    strong
-                      a(href='http://startbootstrap.com') Start Bootstrap
-                  li
-                    | Date:
-                    strong
-                      a(href='http://startbootstrap.com') April 2014
-                  li
-                    | Service:
-                    strong
-                      a(href='http://startbootstrap.com') Web Development
-                button.btn.btn-default(type='button', data-dismiss='modal')
-                  i.fa.fa-times
-                  |  Close
+
     // jQuery
     script(src='javascripts/js/jquery.js')
     // Bootstrap Core JavaScript
