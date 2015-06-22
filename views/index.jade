@@ -84,7 +84,7 @@ html(lang='en')
           .col-lg-8.col-lg-offset-2
             // To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
             // The form should work on most web servers, but if the form is not working you may need to configure your web server differently.
-            form#contactForm(name='sentMessage', novalidate='')
+            form#contactForm(novalidate='', method='post')
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Name
@@ -103,7 +103,7 @@ html(lang='en')
               .row.control-group#antispam
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Do not use
-                  input(type='text', name='antispam', placeholder='No input here, please!', required='')
+                  input#spamchecker(type='text', name='antispam', placeholder='No input here, please!', required='')
               .row.control-group
                 .form-group.col-xs-12.floating-label-form-group.controls
                   label Message

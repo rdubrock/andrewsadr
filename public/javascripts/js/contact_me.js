@@ -15,19 +15,22 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
+            var antispam = $("input#spamchecker").val();
+            console.log(antispam);
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "././mail/",
                 type: "POST",
                 data: {
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    message: message,
+                    antispam: antispam
                 },
                 cache: false,
                 success: function() {
@@ -40,7 +43,7 @@ $(function() {
                         .append("<strong>Your message has been sent. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
-
+                    $('label').hide();
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
@@ -52,7 +55,9 @@ $(function() {
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
+                    $('label').hide();
                     $('#contactForm').trigger("reset");
+
                 },
             })
         },
