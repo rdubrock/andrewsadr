@@ -1,5 +1,0 @@
-rsync -t app.js -e "ssh -p $11987" russ@andrewsadrservices.com:~/andrewsadr
-rsync -rt public -e "ssh -p $11987" russ@andrewsadrservices.com:~/andrewsadr
-rsync -rt views -e "ssh -p $11987" russ@andrewsadrservices.com:~/andrewsadr
-rsync -rt routes -e "ssh -p $11987" russ@andrewsadrservices.com:~/andrewsadr
-rsync -t package.json -e "ssh -p $11987" russ@andrewsadrservices.com:~/andrewsadr
