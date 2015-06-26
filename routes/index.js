@@ -17,10 +17,10 @@ router.post('/mail', function(req, res, next) {
   //Specify email data
     from: 'contact@andrewsadrservices.com',
   //The email to contact
-    to: 'russell.dubrock@gmail.com',
+    to: 'andrewselaine@gmail.com',
   //Subject and text data  
     subject: 'Enquiry through website from '+req.body.name,
-    html: '<h3>Name: '+req.body.name+'</h3><br><h3>Email: '+req.body.email+'</h3><br><h3>Phone: '+req.body.phone+'</h3><br><h3>Message: </h3><p>'+req.body.message+'</p>'
+    html: '<h4>Name: </h4><p>'+req.body.name+'</p><h4>Email: </h4><p>'+req.body.email+'</p><h4>Phone: </h4><p>'+req.body.phone+'</p><h4>Message: </h4><p>'+req.body.message+'</p>'
   }
 
     //Invokes the method to send emails given the above data with the helper library
