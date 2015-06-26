@@ -15,12 +15,12 @@ router.post('/mail', function(req, res, next) {
 
   var data = {
   //Specify email data
-    from: req.body.email,
+    from: 'contact@andrewsadrservices.com',
   //The email to contact
-    to: 'adubrock@comcast.net',
+    to: 'russell.dubrock@gmail.com',
   //Subject and text data  
-    subject: 'Contact from website',
-    text: req.body.message+' Phone: '+req.body.phone
+    subject: 'Enquiry through website from '+req.body.name,
+    html: '<h3>Name: '+req.body.name+'</h3><br><h3>Email: '+req.body.email+'</h3><br><h3>Phone: '+req.body.phone+'</h3><br><h3>Message: </h3><p>'+req.body.message+'</p>'
   }
 
     //Invokes the method to send emails given the above data with the helper library
